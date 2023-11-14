@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facial Expression Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #videoElement {
+            border: 5px solid #666;
+            border-radius: 8px;
+        }
+
+        .container {
+            position: relative;
+            display: inline-block;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .expression {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Facial Expression Recognition</h1>
+    <div class="container">
+        <video id="videoElement" width="720" height="560" autoplay></video>
+    </div>
+    <div id="expression" class="expression">Expression: Neutral</div>
+    <script src="app.js"></script>
+</body>
+</html>
