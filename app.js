@@ -1,8 +1,11 @@
 async function start() {
-    // Load models
-    await faceapi.nets.tinyFaceDetector.loadFromUri('/models');
-    await faceapi.nets.faceLandmark68Net.loadFromUri('/models');
-    await faceapi.nets.faceExpressionNet.loadFromUri('/models');
+    // GitHub base URL for face-api models
+    const modelBaseUrl = 'https://raw.githubusercontent.com/justadudewhohacks/face-api.js/master/weights/';
+
+    // Load models from GitHub
+    await faceapi.nets.tinyFaceDetector.loadFromUri(modelBaseUrl + 'tiny_face_detector_model-weights_manifest.json');
+    await faceapi.nets.faceLandmark68Net.loadFromUri(modelBaseUrl + 'face_landmark_68_model-weights_manifest.json');
+    await faceapi.nets.faceExpressionNet.loadFromUri(modelBaseUrl + 'face_expression_model-weights_manifest.json');
 
     // Get video element and start video
     const video = document.getElementById('videoElement');
