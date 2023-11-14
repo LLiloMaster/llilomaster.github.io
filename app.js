@@ -1,8 +1,8 @@
 async function start() {
     // Load models from the local models directory
-    await faceapi.nets.tinyFaceDetector.loadFromUri('/');
-    await faceapi.nets.faceLandmark68Net.loadFromUri('/');
-    await faceapi.nets.faceExpressionNet.loadFromUri('/');
+    await faceapi.nets.tinyFaceDetector.loadFromUri('./');
+    await faceapi.nets.faceLandmark68Net.loadFromUri('./');
+    await faceapi.nets.faceExpressionNet.loadFromUri('./');
 
     // Get video element and start video
     const video = document.getElementById('videoElement');
